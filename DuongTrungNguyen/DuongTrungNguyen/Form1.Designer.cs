@@ -39,6 +39,8 @@
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtMaSP = new System.Windows.Forms.TextBox();
             this.txtTenSP = new System.Windows.Forms.TextBox();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -118,7 +120,9 @@
             this.groupBox1.Controls.Add(this.txtDonGia);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtSoLuong);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.hoTenNhanVienLabel);
+            this.groupBox1.Controls.Add(this.txtMaSP);
             this.groupBox1.Controls.Add(this.txtTenSP);
             this.groupBox1.Controls.Add(this.ngaySinhLabel);
             this.groupBox1.Controls.Add(this.diaChiLabel);
@@ -170,6 +174,22 @@
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(200, 20);
             this.txtSoLuong.TabIndex = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(19, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Mã sản phẩm:";
+            // 
+            // txtMaSP
+            // 
+            this.txtMaSP.Location = new System.Drawing.Point(124, 19);
+            this.txtMaSP.Name = "txtMaSP";
+            this.txtMaSP.Size = new System.Drawing.Size(200, 20);
+            this.txtMaSP.TabIndex = 3;
             // 
             // txtTenSP
             // 
@@ -278,6 +298,7 @@
             this.btThoat.TabIndex = 3;
             this.btThoat.Text = "Thoát";
             this.btThoat.UseVisualStyleBackColor = true;
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
             // btSua
             // 
@@ -287,6 +308,7 @@
             this.btSua.TabIndex = 2;
             this.btSua.Text = "Sửa";
             this.btSua.UseVisualStyleBackColor = true;
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // btXoa
             // 
@@ -296,6 +318,7 @@
             this.btXoa.TabIndex = 1;
             this.btXoa.Text = "Xóa";
             this.btXoa.UseVisualStyleBackColor = true;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // btThem
             // 
@@ -380,6 +403,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.DataGridView gvSanPham;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtMaSP;
     }
 }
 

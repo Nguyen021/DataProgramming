@@ -59,6 +59,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NorthwindDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ProductBUS.cs" />
+    <Compile Include="ProductDAL.cs" />
     <Compile Include="Products.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
