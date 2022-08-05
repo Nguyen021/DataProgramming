@@ -32,19 +32,41 @@ namespace DuongTrungNguyen
         }
 
 
-        public bool AddProduct(Products p)
+        public int AddProduct(Products p)
         {
-            return dal.AddProduct(p);
+            int result = 0;
+            if (dal.CheckProductName(p)) //Neu San Pham Ton Tai
+            {
+                result = -1;
+            }
+            else // San Pham Chua Ton Tai Thi Them Goi ADDPRODUCT DAL
+            {
+                result = dal.AddProduct(p); //tra ve 0 ADD that bai,1 ADD thanh cong
+            }
+            return result;
         }
 
-        public bool UpdateProduct(Products p)
+        public int UpdateProduct(Products p)
         {
-            return dal.UpdateProduct(p);
+            int result = 0;
+            if (dal.CheckProductID(p)) //Neu Ma San Pham Ton Tai
+            {
+                dal.UpdateProduct(p);
+                result = 1;
+            }
+            
+            return result;
         }
 
-        public bool DeleteProduct(Products p)
+        public int DeleteProduct(Products p)
         {
-            return dal.DeleteProduct(p);
+            int result = 0;
+            if (dal.CheckProductID(p)) //Neu Ma San Pham Ton Tai
+            {
+                dal.DeleteProduct(p);
+                result = 1;
+            }
+            return result;
         }
     }
 }

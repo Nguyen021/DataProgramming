@@ -66,9 +66,6 @@ namespace DuongTrungNguyen
             //cbNCC.DataSource = LoadListSupplier();
             //cbNCC.DisplayMember = "CompanyName";
             //cbNCC.ValueMember = "SupplierID";
-
-
-
         }
         //private bool AddProduct(Products p)
         //{
@@ -95,101 +92,93 @@ namespace DuongTrungNguyen
         //}
         private void btThem_Click(object sender, EventArgs e)
         {
-
             try
             {
-
                 Products p = new Products();
                 p.Productname = txtTenSP.Text;
                 p.CategoryID = int.Parse(cbLoaiSP.SelectedValue.ToString());
                 p.SupplierID = int.Parse(cbNCC.SelectedValue.ToString());
                 p.UnitPrice = double.Parse(txtDonGia.Text);
                 p.Quantity = txtSoLuong.Text;
-                busProduct.AddProduct(p);
-                MessageBox.Show("Thêm Thành Công", "Thông Báo");
-                busProduct.LoadListProduct(gvSanPham);
+                
+                if (busProduct.AddProduct(p)>0)
+                {
+                    MessageBox.Show("Thêm Thành Công", "Thông Báo");
+                    busProduct.LoadListProduct(gvSanPham);
+                }
+                else
+                {
+                    MessageBox.Show("Thêm Thất Bại. Tên Sản Phẩm Đã Tồn Tại", "Thông báo");
+                }
+                
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message , "Lỗi Thêm Sản Phẩm");
-            }
-
-             
-            
+            } 
         }
 
         private void btSua_Click(object sender, EventArgs e)
         {
-            try
-            {
+            
                 Products p = new Products();
-                p.Productname = txtTenSP.Text;
-                p.CategoryID = int.Parse(cbLoaiSP.SelectedValue.ToString());
-                p.SupplierID = int.Parse(cbNCC.SelectedValue.ToString());
-                p.UnitPrice = double.Parse(txtDonGia.Text);
-                p.Quantity = txtSoLuong.Text;
-                p.ProductID = int.Parse(txtMaSP.Text);
-                busProduct.UpdateProduct(p);
-                busProduct.LoadListProduct(gvSanPham);
-                MessageBox.Show("Update Thành Công !!", "Thông Báo",MessageBoxButtons.OK);
+                try
+                {
+                    p.Productname = txtTenSP.Text;
+                    p.CategoryID = int.Parse(cbLoaiSP.SelectedValue.ToString());
+                    p.SupplierID = int.Parse(cbNCC.SelectedValue.ToString());
+                    p.UnitPrice = double.Parse(txtDonGia.Text);
+                    p.Quantity = txtSoLuong.Text;
+                    p.ProductID = int.Parse(txtMaSP.Text);
+                if (busProduct.UpdateProduct(p) > 0)
+                {
+                    MessageBox.Show("Cập Nhập Thành Công", "Thông Báo");
+                    busProduct.LoadListProduct(gvSanPham);
 
+                }
+                else
+                {
+                    MessageBox.Show("Cập Nhập Thất Bại. Mã Sản Phẩm Không Tồn Tại", "Thông Báo");
+                }
             }
-            catch (Exception ex)
-            {
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
 
-                MessageBox.Show(ex.Message, "Lỗi Update Sản Phẩm");
-            }
+               
+              
+            
+           
       
         }
-
         private void btXoa_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 Products p = new Products();
                 p.ProductID = int.Parse(txtMaSP.Text);
-                busProduct.DeleteProduct(p);
-                busProduct.LoadListProduct(gvSanPham);
-                MessageBox.Show("Delete Thành Công !!", "Thông Báo", MessageBoxButtons.OK);
+
+                if (busProduct.DeleteProduct(p) > 0)
+                {
+                    MessageBox.Show("Xóa Thành Công", "Thông Báo");
+                    busProduct.LoadListProduct(gvSanPham);
+                }
+                else
+                {
+                    MessageBox.Show("Xóa Thất Bại. Mã Sản Phẩm Không Tồn Tại", "Thông Báo");
+                }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message , "Lỗi Delete Sản Phẩm");
                 
             }
         }
 
-        //click row cell in Gridview
-        //private void gvSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
-        //{
-
-        //    try
-        //    {
-        //        if (gvSanPham.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)/*(e.RowIndex >= 0 && e.RowIndex < gvSanPham.Rows.Count)*/
-        //        {
-        //            gvSanPham.CurrentRow.Selected = true;
-        //            DataGridViewRow row = gvSanPham.Rows[e.RowIndex];
-        //            txtMaSP.Text = row.Cells["ProductID"].FormattedValue.ToString();
-        //            txtTenSP.Text = row.Cells["prodcutname"].FormattedValue.ToString();
-        //            txtDonGia.Text = row.Cells["UniPrice"].FormattedValue.ToString();
-        //            txtSoLuong.Text = row.Cells["QuantityPerunit"].FormattedValue.ToString();
-        //            cbLoaiSP.SelectedValue = int.Parse(row.Cells["CategoryID"].FormattedValue.ToString());
-        //            cbNCC.SelectedValue = int.Parse(row.Cells["SupplierID"].FormattedValue.ToString());
-        //        }
-        //        else
-        //        {
-
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
-
-        private void gvSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void gvSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -198,7 +187,7 @@ namespace DuongTrungNguyen
                     txtMaSP.Text = gvSanPham.Rows[e.RowIndex].Cells[0].Value.ToString();
                     txtTenSP.Text = gvSanPham.Rows[e.RowIndex].Cells[1].Value.ToString();
                     txtDonGia.Text = gvSanPham.Rows[e.RowIndex].Cells["UnitPrice"].Value.ToString();
-                    txtSoLuong.Text = gvSanPham.Rows[e.RowIndex].Cells["QuantityPerUnit"].Value.ToString();
+                    txtSoLuong.Text = gvSanPham.Rows[e.RowIndex].Cells["UnitsInStock"].Value.ToString();
                     cbLoaiSP.SelectedValue = int.Parse(gvSanPham.Rows[e.RowIndex].Cells["CategoryID"].Value.ToString());
                     cbNCC.SelectedValue = int.Parse(gvSanPham.Rows[e.RowIndex].Cells["SupplierID"].Value.ToString());
                 }
@@ -208,11 +197,7 @@ namespace DuongTrungNguyen
                 throw ex;
             }
         }
-
-        private void btThoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        private void btThoat_Click(object sender, EventArgs e) { this.Close();}
     }
 
 }

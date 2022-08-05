@@ -29,3 +29,14 @@ C:\Users\duong\OneDrive\Máy tính\Git\DataProgramming\DuongTrungNguyen\DuongTru
 C:\Users\duong\OneDrive\Máy tính\Git\DataProgramming\DuongTrungNguyen\DuongTrungNguyen\obj\Debug\DuongTrungNguyen.csproj.CoreCompileInputs.cache
 C:\Users\duong\OneDrive\Máy tính\Git\DataProgramming\DuongTrungNguyen\DuongTrungNguyen\obj\Debug\DuongTrungNguyen.exe
 C:\Users\duong\OneDrive\Máy tính\Git\DataProgramming\DuongTrungNguyen\DuongTrungNguyen\obj\Debug\DuongTrungNguyen.pdb
+C:\Users\duong\OneDrive\Máy tính\LTCSDL\DataProgramming\DuongTrungNguyen\DuongTrungNguyen\bin\Debug\DuongTrungNguyen.exe.config
+C:\Users\duong\OneDrive\Máy tính\LTCSDL\DataProgramming\DuongTrungNguyen\DuongTrungNguyen\bin\Debug\DuongTrungNguyen.exe
+C:\Users\duong\OneDrive\Máy tính\LTCSDL\DataProgramming\DuongTrungNguyen\DuongTrungNguyen\bin\Debug\DuongTrungNguyen.pdb
+C:\Users\duong\OneDrive\Máy tính\LTCSDL\DataProgramming\DuongTrungNguyen\DuongTrungNguyen\obj\Debug\DuongTrungNguyen.csproj.AssemblyReference.cache
+C:\Users\duong\OneDrive\Máy tính\LTCSDL\DataProgramming\DuongTrungNguyen\DuongTrungNguyen\obj\Debug\DuongTrungNguyen.csproj.SuggestedBindingRedirects.cache
+C:\Users\duong\OneDrive\Máy tính\LTCSDL\DataProgramming\DuongTrungNguyen\DuongTrungNguyen\obj\Debug\DuongTrungNguyen.Form1.resources
+C:\Users\duong\OneDrive\Máy tính\LTCSDL\DataProgramming\DuongTrungNguyen\DuongTrungNguyen\obj\Debug\DuongTrungNguyen.Properties.Resources.resources
+C:\Users\duong\OneDrive\Máy tính\LTCSDL\DataProgramming\DuongTrungNguyen\DuongTrungNguyen\obj\Debug\DuongTrungNguyen.csproj.GenerateResource.cache
+C:\Users\duong\OneDrive\Máy tính\LTCSDL\DataProgramming\DuongTrungNguyen\DuongTrungNguyen\obj\Debug\DuongTrungNguyen.csproj.CoreCompileInputs.cache
+C:\Users\duong\OneDrive\Máy tính\LTCSDL\DataProgramming\DuongTrungNguyen\DuongTrungNguyen\obj\Debug\DuongTrungNguyen.exe
+C:\Users\duong\OneDrive\Máy tính\LTCSDL\DataProgramming\DuongTrungNguyen\DuongTrungNguyen\obj\Debug\DuongTrungNguyen.pdb
